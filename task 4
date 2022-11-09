@@ -1,0 +1,13 @@
+#include <iostream>
+
+double Distance(double x1, double y1, double x2, double y2)
+{
+	double a = pow(x1 - x2, 2);
+	double b = pow(y1 - y2, 2);
+	double distance = sqrt(a + b);
+	return distance;
+}
+int main()
+{
+	std::cout << Distance(0, 1, 1, 0);
+}
