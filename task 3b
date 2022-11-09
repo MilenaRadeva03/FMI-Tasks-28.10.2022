@@ -1,0 +1,20 @@
+#include <iostream>
+
+char CapitalLetter(char n)
+{
+	if (n < 'a' || n >'z')
+	{
+		throw "This letter isn't a small letter.";
+	}
+	int diff = 'A' - 'a';
+	return n + diff;
+}
+int main()
+{
+	try {
+		std::cout<<CapitalLetter('B');
+	} catch(const char* e)
+	{
+		std::cout << e;
+	}
+}
