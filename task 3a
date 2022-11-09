@@ -1,0 +1,12 @@
+#include <iostream>
+
+unsigned PositiveNumber(int n)
+{
+    return n >= 0 ? n : -n;
+}
+
+
+int main()
+{
+    std::cout << PositiveNumber(5);
+}
