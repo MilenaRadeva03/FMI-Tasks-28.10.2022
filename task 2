@@ -1,0 +1,32 @@
+#include <iostream>
+
+double Pow1(double x, int n)
+{
+    double sum = 1;
+    if (n >= 0)
+    {
+        while (n > 0)
+        {
+            sum *= x;
+            n--;
+        }
+        return sum;
+    }
+
+    if (n < 0)
+    {
+        x = 1 / x;
+        while (n < 0)
+        {
+            sum *= x;
+            n++;
+        }
+        return sum;
+    }
+    
+}
+
+int main()
+{
+    std::cout << Pow1(2, -3);
+}
