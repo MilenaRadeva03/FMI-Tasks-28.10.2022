@@ -1,0 +1,58 @@
+#include <iostream>
+
+double Distance(double x1, double y1, double x2, double y2)
+{
+	double a = pow(x1 - x2, 2);
+	double b = pow(y1 - y2, 2);
+	double distance = sqrt(a + b);
+	return distance;
+}
+
+double maxNumber(double a, double b, double c)
+{
+	double max = 0;
+	max = (max < a) ? a : max;
+	max = (max < b) ? b : max;
+	max = (max < c) ? c : max;
+	return max;
+}
+bool isTriangle(double a, double b, double c)
+{
+	double max = maxNumber(a, b, c);
+	double sum = a + b + c;
+	if (max < (sum - max))
+	{
+		return true;
+	}
+	return false;
+	
+}
+
+double TrianglePerimeter(double x1,double y1,double x2,double y2, double x3, double y3)
+{ 
+	double a = Distance(x1, y1, x2, y2);
+	double b = Distance(x1, y1, x3, y3);
+	double c = Distance(x3, y3, x2, y2);
+	if (isTriangle(a, b, c))
+	{
+		return a + b + c;
+	}
+	else
+	{
+		throw "This triangle doesn't exist!";
+	}
+	
+}
+
+int main()
+{
+	try
+	{
+		std::cout<< TrianglePerimeter(7, 5, 1, 5, 6, 8);
+	}
+	catch (const char* e)
+	{
+		std::cout << e;
+	}
+	
+}
