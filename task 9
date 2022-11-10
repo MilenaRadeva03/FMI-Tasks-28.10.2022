@@ -1,0 +1,23 @@
+#include <iostream>
+int gsd(int a, int b)
+{
+    int r;
+    do
+    {
+        if (a == 0)
+        {
+            return b;
+        }
+        else if (b == 0)
+        {
+            return a;
+        }
+        r = a % b;
+        a = b;
+        b = r;
+    } while (r != 0);
+}
+int main()
+{
+    std::cout << gsd(5,0);
+}
